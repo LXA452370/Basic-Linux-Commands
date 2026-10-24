@@ -1,7 +1,6 @@
 # Linux 指令
 ## 2026-10-14
-- 学习了markdown的基本内容
-- 牛逼
+- markdown
 ## 2026-10-15
 ### shell and bash
 - bash作为最常用的shell,是乌班图的解释器，用于直接编译命令行
@@ -197,3 +196,20 @@
     - u所有者 g分组 o其他用户 a所有用户 +/-给哪个人什么权限 =直接写权限
     - chmod u+rwx text.c 给所有者赋予text.c的rwx权限
     - chmod g=rwx text.txt 给分组内的用户赋予text.txt的rwx权限
+## 2026-10-24
+### 软件包
+- 不同于win系统，乌班图的linux系统将所有可用的安装包都存于一个平台，国内有其镜像平台
+- 第一步：sudo nano /etc/apt/sources.list.d/ubuntu.sources 打开乌班图系统的软件包仓库配置文件
+- 第二步：在清华大学开源镜像网站找对应版本的复制进去
+- 第三步：刷新软件包列表 sudo apt update
+- 第四步：sudo apt install 软件包名字（可多个） 安装软件包，需手动确认 -Y无需手动确认
+- 已安装的软件包会有提示，使用sudo apt upgrade 对所有已安装的软件包进行升级
+- apt search 软件包名字 搜索这个名字相关的所有安装包
+- apt list --installed 列出已安装的安装包
+- sudo apt remove 安装包名字 卸载
+### ip地址
+- ip a 查看ip信息
+### 远程交互
+- SSH可以在自己的电脑上连接到另一台linux主机，比如机房的远程操作
+- 先进入Windows Power Shell 之后使用SSH linux用户名@域名或IP地址连接两台设备
+- scp 源地址:目标地址 可以将文件在win和Linux之间相互传递，-p递归目录传递
